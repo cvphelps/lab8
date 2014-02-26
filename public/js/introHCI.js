@@ -3,11 +3,19 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	registerClickEventHandler();
+
 });
 
 /*
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	// your code here
+	$('.likeBtn').click(function(e) {
+		// prevent following the link
+		e.preventDefault();
+
+		ga("send", "event", "like", "click");
+
+	});
 }
